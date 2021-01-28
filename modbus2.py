@@ -1,23 +1,23 @@
 ##AUTHOR Vincent SIRET##
-##LAST UPDATE 28/01/2021##                                              ############################################################################################################################
-import sys                                                              ##IMPORTATION DU MODULE SYS.                                                                                              ##                                         
-import os                                                               ##IMPORTATION DU MODULE OS.                                                                                               ##
-import requests                                                         ##IMPORTATION DU MODULE REQUESTS.                                                                                         ##                                                                   
-from easymodbus.modbusClient import ModbusClient                        ##IMPORTATION DE MODULE "easymodbus" EN TANT QUE "ModbusClient".                                                          ##  
-modbusclient = ModbusClient('192.168.0.118', 502)                       ##DEFINITION DE LA VARIABLE "modbusclient" QUI EST = À l'IP DE NOTRE CONCENTRATEUR LoRa ET DU PORT PAR DÉFAUT QUI EST 502.##
-reponse = None                                                          ##DEFINITION DE LA VARIABLE REPONSE SUR NONE. (ELLE N'A PAS DE VALEUR)                                                    ##  
-                                                                        ############################################################################################################################
+##LAST UPDATE 28/01/2021##                                              #############################################################################################################################
+import sys                                                              ## IMPORTATION DU MODULE SYS.                                                                                              ##                                         
+import os                                                               ## IMPORTATION DU MODULE OS.                                                                                               ##
+import requests                                                         ## IMPORTATION DU MODULE REQUESTS.                                                                                         ##                                                                   
+from easymodbus.modbusClient import ModbusClient                        ## IMPORTATION DE MODULE "easymodbus" EN TANT QUE "ModbusClient".                                                          ##  
+modbusclient = ModbusClient('192.168.0.118', 502)                       ## DEFINITION DE LA VARIABLE "modbusclient" QUI EST = À l'IP DE NOTRE CONCENTRATEUR LoRa ET DU PORT PAR DÉFAUT QUI EST 502.##
+reponse = None                                                          ## DEFINITION DE LA VARIABLE REPONSE SUR NONE. (ELLE N'A PAS DE VALEUR)                                                    ##  
+                                                                        #############################################################################################################################
 
-try:                                                                    ########################################################################
-    reponse = requests.get("http://192.168.0.118/")                     ##NOUS TENTONS DE NOUS CONNECTER A L'ADRESSE DE NOTRE CONCENTRATEUR   ##
-except:                                                                 ##SI IL N'Y ARRIVE PAS IL AFFICHE "CONEXION ECHOUE" ET IL ARRETE LE   ##
-    print("CONNEXION ECHOUE")                                           ##PROGRAMME.                                                          ##
-    sys.exit                                                            ##                                                                    ##
-    os.system("PAUSE")                                                  ########################################################################
+try:                                                                    #######################################################################
+    reponse = requests.get("http://192.168.0.118/")                     ## NOUS TENTONS DE NOUS CONNECTER A L'ADRESSE DE NOTRE CONCENTRATEUR ##
+except:                                                                 ## SI IL N'Y ARRIVE PAS IL AFFICHE "CONEXION ECHOUE" ET IL ARRETE LE ##
+    print("CONNEXION ECHOUE")                                           ## PROGRAMME AVEC (sys.exit)                                         ##
+    sys.exit                                                            ##                                                                   ##
+    os.system("PAUSE")                                                  #######################################################################
     
-if ( reponse is not None ):                                             ############################################################################################################    
-    modbusclient.connect()                                              #SI IL ARRIVE A SE CONNECTER AU CONCENTRATEUR IL SE CONNECTE ALORS AU MODBUS ET AFFICHE "CONNEXION REUSSI";#
-    print ("CONNEXION REUSSI")                                          ############################################################################################################
+if ( reponse is not None ):                                             ###############################################################################################################    
+    modbusclient.connect()                                              ## SI IL ARRIVE A SE CONNECTER AU CONCENTRATEUR IL SE CONNECTE ALORS AU MODBUS ET AFFICHE "CONNEXION REUSSI".##
+    print ("CONNEXION REUSSI")                                          ###############################################################################################################
 
 ##SYSTEME AMBIANCE V2##                                                 ##############################################################################################################################################################################################################################################    
     presence_ambv2 = modbusclient.read_holdingregisters(13,1)[0]        ## ICI NOUS DEMANDONS AVEC LA VARIABLE "presence_ambv2" LES DONNÉES DE L'ADRESSE 13 SUR 1 OCTET GRACE A "modbusclient.read_holdingregisters(13,1)"ET NOUS METTONS A LA FIN [0]POUR NE PAS L'AVOIR ENTRE CROCHET QUAND NOUS ALLONS LE PRINT  ##
