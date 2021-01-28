@@ -3,7 +3,7 @@
 import sys                                                              ##IMPORTATION DU MODULE SYS.                                                                                              ##                                         
 import os                                                               ##IMPORTATION DU MODULE OS.                                                                                               ##
 import requests                                                         ##IMPORTATION DU MODULE REQUESTS.                                                                                         ##                                                                   
-from easymodbus.modbusClient import ModbusClient                        ##IMPORTATION DE MODULE "easymodbus" en tant que "ModbusClient".                                                          ##  
+from easymodbus.modbusClient import ModbusClient                        ##IMPORTATION DE MODULE "easymodbus" EN TANT QUE "ModbusClient".                                                          ##  
 modbusclient = ModbusClient('192.168.0.118', 502)                       ##DEFINITION DE LA VARIABLE "modbusclient" QUI EST = À l'IP DE NOTRE CONCENTRATEUR LoRa ET DU PORT PAR DÉFAUT QUI EST 502.##
 reponse = None                                                          ##DEFINITION DE LA VARIABLE REPONSE SUR NONE. (ELLE N'A PAS DE VALEUR)                                                    ##  
                                                                         ############################################################################################################################
