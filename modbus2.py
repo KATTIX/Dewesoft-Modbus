@@ -1,7 +1,8 @@
 ##CECI EST LE CODE POUR ACCÉDER AU DONNÉES DU CAPTEUR AMBIANCE V2 AVEC LE PROTOCOLE MODBUS TCP/IP
 
 ##AUTHOR Vincent SIRET##
-##LAST UPDATE 28/01/2021##                                              #############################################################################################################################
+##LAST UPDATE 28/01/2021##
+                                                                        #############################################################################################################################
 import sys                                                              ## IMPORTATION DU MODULE SYS.                                                                                              ##                                         
 import os                                                               ## IMPORTATION DU MODULE OS.                                                                                               ##
 import requests                                                         ## IMPORTATION DU MODULE REQUESTS.                                                                                         ##                                                                   
