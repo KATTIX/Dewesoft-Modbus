@@ -1,5 +1,8 @@
 ##CECI EST LE CODE POUR ACCÉDER AU DONNÉES DES CAPTEURS AVEC L'API MIS A DISPOSITION PAR EWATTCH
 
+##AUTHOR Vincent SIRET##
+##LAST UPDATE 28/01/2021## 
+
 import requests
 import simplejson as json
 import numpy as np
